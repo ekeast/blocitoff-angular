@@ -6,12 +6,11 @@
         $scope.tasks = $firebaseArray(ref);
         
         
-        $scope.addTask = function() {
+        $scope.addTask = function(newTask) {
             $scope.tasks.$add({
-                text: "text"
+                text: newTask
             });
         };
-        
     }
     
     angular

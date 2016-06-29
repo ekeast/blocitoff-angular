@@ -1,0 +1,30 @@
+html {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    padding: 20px;
+    align-content: left;
+}
+
+table, td, th {
+    border: 1px solid black;
+    text-align: left;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+th {
+    background: green;
+    color: white;    
+}
+
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+    padding: 10px;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    text-align: center;
+    width: 20%;
+    font: helvetica;
+}

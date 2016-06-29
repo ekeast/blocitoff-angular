@@ -3,6 +3,12 @@
 <p>The Amazing Web App</p>
 </section>
 
-<ul>
-    <li ng-repeat="task in tasks">{{ task.text }}</li>
-</ul>
+<table>    
+    <tr>
+        <th>My To-Do List</th>
+    </tr>
+    <tr ng-repeat="task in tasks">
+        <td>{{ task.text }}</td>
+    </tr>
+</table>
+
