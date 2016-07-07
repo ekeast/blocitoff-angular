@@ -7,12 +7,12 @@
 <input type="text" ng-model="newTask.text">
 <input type="button" ng-click="addTask(newTask)" value="Save">
 </div>    
-    
-<a ui-sref="past">Completed and Older Tasks</a>
+
+<a ui-sref="home">Home</a>
 
 <table>    
     <th colspan="2">My To-Do List</th>
-    <tr ng-repeat="task in tasks" ng-hide="now.diff(task.dateCreated, 'days') > 7 || task.completed == true">
+    <tr ng-repeat="task in tasks" ng-show="now.diff(task.dateCreated, 'days') > 7 || task.completed == true">
         <td>{{ task.text }}</td>
         <td style="background: red; color: white;" ng-click="completeTask(task)">Task Completed</td>
     </tr>
