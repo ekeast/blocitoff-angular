@@ -3,12 +3,15 @@
 <p>The Amazing Web App</p>
 </section>
 
+<div class="input">
+<input type="text" ng-model="newTask.text">
+<input type="button" ng-click="addTask(newTask)" value="Save">
+</div>    
+    
 <table>    
-    <tr>
-        <th>My To-Do List</th>
-    </tr>
-    <tr ng-repeat="task in tasks">
+    <th colspan="2">My To-Do List</th>
+    <tr ng-repeat="task in tasks" ng-hide="now.diff(task.dateCreated, 'days') > 7 || task.completed == true">
         <td>{{ task.text }}</td>
+        <td style="background: red; color: white;" ng-click="completeTask(task)">Task Completed</td>
     </tr>
 </table>
-
