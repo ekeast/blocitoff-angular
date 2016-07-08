@@ -5,15 +5,21 @@
         var ref = new Firebase("https://blocitoff-angular-76381.firebaseio.com/tasks");
         $scope.tasks = $firebaseArray(ref);
         $scope.newTask = {
-            text: '',
+            text: null,
             completed: false,
             dateCreated: Firebase.ServerValue.TIMESTAMP
         };
         
         $scope.addTask = function(newTask) {
-            $scope.tasks.$add(newTask);
+            if (newTask.text) {
+               $scope.tasks.$add(newTask); 
+            }
+            else {
+                alert("Please enter a task.");
+            }
+            
             $scope.newTask = {
-                text: '',
+                text: null,
                 completed: false,
                 dateCreated: Firebase.ServerValue.TIMESTAMP
             };
