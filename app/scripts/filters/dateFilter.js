@@ -1,5 +1,5 @@
  (function() {
-     function timecode() {
+     function dateFilter() {
          return function(date) {
              return output;
          };
