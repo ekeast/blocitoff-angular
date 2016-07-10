@@ -7,22 +7,28 @@
         $scope.newTask = {
             text: null,
             completed: false,
+            priority: null,
             dateCreated: Firebase.ServerValue.TIMESTAMP
         };
         
         $scope.addTask = function(newTask) {
-            if (newTask.text) {
+            if (newTask.text && newTask.priority) {
                $scope.tasks.$add(newTask); 
             }
             else {
-                alert("Please enter a task.");
+                alert("Please enter a task and a priority.");
             }
             
             $scope.newTask = {
                 text: null,
                 completed: false,
+                priority: null,
                 dateCreated: Firebase.ServerValue.TIMESTAMP
             };
+        };
+        
+        $scope.removeTask = function(task) {
+            $scope.tasks.$remove(task);
         };
         
         $scope.completeTask = function(task) {
@@ -31,6 +37,8 @@
         };
         
         $scope.now = moment();
+        
+        $scope.hovered = false;
         
     }
     
